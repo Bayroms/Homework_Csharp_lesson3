@@ -1,18 +1,12 @@
-﻿Console.WriteLine("Insert 5-digit number: ");
-int number = Convert.ToInt32(Console.ReadLine());
+﻿Console.WriteLine("Enter point 1 coordinates (X,Y,Z)");
+int num1X = Convert.ToInt32(Console.ReadLine());
+int num1Y = Convert.ToInt32(Console.ReadLine());
+int num1Z = Convert.ToInt32(Console.ReadLine());
 
-int num1 = number / 10000 % 10;
-int num2 = number / 1000 % 10;
-int rev1 = number / 10 % 10;
-int rev2 = number % 10;
-int lenght = number / 10000;
+Console.WriteLine("Enter point 2 coordinates (X,Y,Z)");
+int num2X = Convert.ToInt32(Console.ReadLine());
+int num2Y = Convert.ToInt32(Console.ReadLine());
+int num2Z = Convert.ToInt32(Console.ReadLine());
 
-if (lenght < 1 || lenght > 9){
-    Console.WriteLine($"{number} is not 5-digit number");
-    }
-    else if  (num1 == rev2 && num2 == rev1){
-    Console.WriteLine($"{number} is a polydrome");
-    }
-    else{
-    Console.WriteLine($"{number} is not a polydrome");
-    }
+double dist = Math.Sqrt(Math.Pow((num2X-num1X),2) + Math.Pow((num2Y-num1Y),2) + Math.Pow((num2Z - num1Z),2));
+System.Console.WriteLine($"Distance is {dist}");
